@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_postgres__addresses
+    description: Contains user addresses.
+
+  - name: stg_postgres__events
+    description: >
+      Contains information about events related to user interactaion with the website.
+
+  - name: stg_postgres__order_items
+    description: Maps orders to products.
+
+  - name: stg_postgres__orders
+    description: Contains information about each order.
+
+  - name: stg_postgres__promos
+    description: Contains information about promos.
+
+  - name: stg_postgres__users
+    description: Contains information about each user.
+
+  - name: stg_postgres__products
+    description: Contains information about each product.
+    

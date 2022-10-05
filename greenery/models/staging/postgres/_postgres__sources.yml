@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: postgres
+    database: raw
+    schema: public
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    tables:
+      - name: users
+        loaded_at_field: created_at
+        description: Contains information about each underscores.
+
+      - name: addresses
+        description: Contains user addresses.
+
+      - name: events
+        loaded_at_field: created_at
+        description: >
+          Contains information about events related to user interactaion with the website.
+
+      - name: orders
+        loaded_at_field: created_at
+        description: >
+          Contains information about each order.
+
+      - name: products
+        description: Contains information about each product.
+
+      - name: order_items
+        description: Maps orders to products.
+
+      - name: promos
+        description: Contains information about promos.
