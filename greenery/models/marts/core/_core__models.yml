@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Contains information about Greenery products
+  - name: dim_users
+    description: Contains information about Greenery users
+  - name: fct_orders
+    description: Contains expanded information about each order.

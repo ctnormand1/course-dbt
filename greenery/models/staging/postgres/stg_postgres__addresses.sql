@@ -7,7 +7,7 @@ source as (
 addresses as (
   select
     address_id,
-    address,
+    address as street_address,
     lpad(zipcode, 5, 0)::varchar(256) zipcode,
     state,
     country

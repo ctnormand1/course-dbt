@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_items_summed_by_order
+    description: The sum of all items contained in each order.

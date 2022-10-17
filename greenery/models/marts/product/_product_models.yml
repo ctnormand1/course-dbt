@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: fct_product_sales
+    description: Information about the sales of each product.

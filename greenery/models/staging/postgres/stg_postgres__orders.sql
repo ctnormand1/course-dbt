@@ -13,7 +13,7 @@ orders as (
     created_at,
     order_cost,
     shipping_cost,
-    order_total,
+    order_total as total_cost,
     tracking_id,
     shipping_service,
     estimated_delivery_at,
