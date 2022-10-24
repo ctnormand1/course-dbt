@@ -3,3 +3,14 @@ version: 2
 models:
   - name: int_items_summed_by_order
     description: The sum of all items contained in each order.
+
+  - name: int_checkout_events_fanned_by_product
+    description: >
+      An expanded view of checkout events.
+      Each row represents a product that was in a user's cart at time of checkout.
+
+  - name: int_product_interactions_by_session
+    description: >
+      A summarized view of product interactions by session. Contains boolean flags
+      indicating if the user viewed the product, added the product to their cart,
+      and placed an order containing the product. 

@@ -17,6 +17,20 @@ models:
         tests:
           - not_null
           - unique
+      - name: session_id
+        tests:
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_postgres__users')
+              field: user_id
+      - name: event_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['page_view', 'add_to_cart', 'checkout', 'package_shipped']
 
   - name: stg_postgres__order_items
     description: Maps orders to products.

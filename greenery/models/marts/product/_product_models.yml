@@ -3,3 +3,42 @@ version: 2
 models:
   - name: fct_product_sales
     description: Information about the sales of each product.
+  
+  - name: fct_product_conversion_rates
+    description: Information about conversion rates through the product funnel.
+    columns:
+      - name: product_id
+        description: Product ID
+      - name: name
+        description: Product name
+      - name: page_view_rate
+        description: >
+          What percentage of sessions included a page-view for this product?
+        tests: 
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1
+      - name: cart_add_rate
+        description: >
+          What percentage of sessions that included a page-view for this product
+          also included a cart-add for this product?
+        tests: 
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1
+      - name: order_rate
+        description: >
+          What percentage of sessions that included a cart-add for this product
+          also placed an order containing this product?
+        tests: 
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1
+      - name: overall_conversion_rate
+        description: >
+          What percentage of sessions made it all the way through the product funnel?
+          That is to say, what percentage of sessions placed an order containing this product?
+        tests: 
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1
